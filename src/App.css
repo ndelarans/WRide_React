@@ -1,0 +1,284 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/*  header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #7a7a7a;
+  color: #fff;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav {
+  position: relative;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #8a8a8a;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px rgba(138, 138, 138, 0.1);
+  display: none; 
+}
+
+.menu.open {
+  display: block; 
+}
+
+.menu-item {
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+.menu-item:hover {
+  background-color: #666;
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+/*Introduccion*/
+.introduction {
+  width: 100%; 
+  max-width: 1000px; 
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+/* Sección de diagnóstico */
+
+.diagnosis {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+  width: calc(100% - 40px); 
+  margin: 20px auto; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-sizing: border-box; 
+  min-height: 200px;
+  display: flex; 
+  flex-direction: column;
+}
+
+.box h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px; 
+  font-size: 1rem;
+}
+
+.box {
+  opacity: 0;
+  transform: translateY(20px); 
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0); 
+}
+/*Seccion organizacion*/
+.organization {
+  max-width: auto; 
+  margin: 0 auto;
+  padding: 20px;   
+}
+
+.organization h2 {
+  text-align: left; 
+  margin-bottom: 20px; 
+}
+
+.organization p {
+  margin: 10px 0;
+  line-height: 1.6; 
+}
+
+.organization strong {
+  display: block; 
+  margin-bottom: 5px; 
+}
+
+.Objectives {
+  width: 80%; 
+  max-width: 900px; 
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%; 
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #f2f2f2;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+/* Pie de página */
+footer {
+  background-color: #7a7a7a;
+  color: white;
+  width: 100%; 
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box; 
+  margin-top: 20px; 
+}
+
+/* Para pantallas de menos de 768px (móviles y tabletas pequeñas) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu {
+    position: static;
+    display: none; 
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  .diagnosis {
+    grid-template-columns: 1fr;
+  }
+  
+  .introduction {
+    padding: 10px;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .Objectives {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  table th, table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .diagnosis {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; 
+  }
+}
+@media (max-width: 768px) {
+  .diagnosis {
+    grid-template-columns: 1fr; 
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .Objectives {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table, th, td {
+    border: 1px solid #f2f2f2;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
